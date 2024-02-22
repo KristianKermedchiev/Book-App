@@ -13,6 +13,7 @@
 *.user
 *.aps
 *.pch
+*.vsdix
 *.vspscc
 *_i.c
 *_p.c
