@@ -1,9 +1,12 @@
-﻿using Book_App.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
+﻿
 
 namespace Book_App.Controllers
 {
+    using Microsoft.AspNetCore.Mvc;
+    using System.Diagnostics;
+
+    using Models;
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -14,11 +17,6 @@ namespace Book_App.Controllers
         }
 
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }
