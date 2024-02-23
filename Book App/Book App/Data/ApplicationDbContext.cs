@@ -1,4 +1,5 @@
 ﻿using Book_App.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,17 +11,19 @@ namespace Book_App.Data
             : base(options)
         {
         }
+
         public DbSet<Book> Books { get; set; }
+        public DbSet<User> Users { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
 
-            builder.Entity<Book>()
+            modelBuilder.Entity<Book>()
                 .HasOne(b => b.Owner)
                 .WithMany(u => u.OwnedBooks)
                 .HasForeignKey(b => b.OwnerId)
-                .OnDelete(DeleteBehavior.Restrict); 
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

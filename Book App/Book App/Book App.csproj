@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-Book_App-ffc5617b-b0c0-458a-8849-d77c45d202af</UserSecretsId>
+    <UserSecretsId>aspnet-Book_App-ed4fc0d4-7b4b-4359-8e3d-e3a428f6a698</UserSecretsId>
     <RootNamespace>Book_App</RootNamespace>
   </PropertyGroup>
 
