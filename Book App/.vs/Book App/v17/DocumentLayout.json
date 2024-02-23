@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Data\\Migrations\\20240223142648_MigrationName.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Book App\\Data\\Migrations\\20240223142648_MigrationName.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,6 +21,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\data\\migrations\\20240223142648_migrationname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\data\\migrations\\20240223142648_migrationname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,15 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "20240223142648_MigrationName.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Data\\Migrations\\20240223142648_MigrationName.cs",
               "RelativeDocumentMoniker": "Book App\\Data\\Migrations\\20240223142648_MigrationName.cs",
@@ -50,8 +46,7 @@
               "RelativeToolTip": "Book App\\Data\\Migrations\\20240223142648_MigrationName.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T14:26:48.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T14:26:48.222Z"
             },
             {
               "$type": "Document",
@@ -68,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Program.cs",
               "RelativeDocumentMoniker": "Book App\\Program.cs",
@@ -76,12 +71,11 @@
               "RelativeToolTip": "Book App\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T14:17:57.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T14:17:57.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Models\\User.cs",
               "RelativeDocumentMoniker": "Book App\\Models\\User.cs",
@@ -89,12 +83,11 @@
               "RelativeToolTip": "Book App\\Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T14:17:07.051Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T14:17:07.051Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Models\\Book.cs",
               "RelativeDocumentMoniker": "Book App\\Models\\Book.cs",
@@ -102,12 +95,11 @@
               "RelativeToolTip": "Book App\\Models\\Book.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAmwCgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T14:16:06.998Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T14:16:06.998Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Book App\\Data\\ApplicationDbContext.cs",
@@ -115,8 +107,7 @@
               "RelativeToolTip": "Book App\\Data\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-23T14:16:03.738Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-23T14:16:03.738Z"
             }
           ]
         }
