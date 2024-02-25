@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Book_App.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -12,7 +12,9 @@ namespace Book_App.Data
         }
 
         public DbSet<Book> Books { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<Movie> Movies { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Genre> Genres { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -22,6 +24,28 @@ namespace Book_App.Data
                 .HasOne(b => b.Owner)
                 .WithMany(u => u.OwnedBooks)
                 .HasForeignKey(b => b.OwnerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Movie>()
+                .HasMany(m => m.Genres)
+                .WithMany(g => g.Movies)
+                .UsingEntity(j => j.ToTable("MovieGenres"));
+
+            modelBuilder.Entity<Book>()
+                .HasMany(b => b.Genres)
+                .WithMany(g => g.Books)
+                .UsingEntity(j => j.ToTable("BookGenres"));
+
+            modelBuilder.Entity<Rating>()
+                .HasOne(r => r.Book)
+                .WithMany(b => b.Ratings)
+                .HasForeignKey(r => r.BookId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Rating>()
+                .HasOne(r => r.Movie)
+                .WithMany(m => m.Ratings)
+                .HasForeignKey(r => r.MovieId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

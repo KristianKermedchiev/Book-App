@@ -3,16 +3,19 @@
     public static class Constants
     {
 
-        public static class BookConstatns
+        public static class MediaConstants
         {
-            public const int TitleMinLength = 5;
+            public const int TitleMinLength = 2;
             public const int TitleMaxLength = 25;
 
             public const int DescriptionMinLength = 50;
             public const int DescriptionMaxLength = 500;
 
             public const int AuthorNameMinLength = 2;
-            public const int AuthorNameMaxLength = 10;
+            public const int AuthorNameMaxLength = 20;
+
+            public const int DirectorNameMinLength = 2;
+            public const int DirectorNameMaxLength = 20;
 
             public const int ImgUrlMaxLength = 2048;
 
@@ -27,6 +30,8 @@
 
             public const int PagesMinLength = 50;
             public const int PagesMaxLength = 1999;
+
+            public const int MovieDuration = 0;
         }
 
         public static class UserConstants
