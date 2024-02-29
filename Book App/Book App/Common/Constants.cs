@@ -2,7 +2,6 @@
 {
     public static class Constants
     {
-
         public static class MediaConstants
         {
             public const int TitleMinLength = 2;
