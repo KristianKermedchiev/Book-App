@@ -2,7 +2,38 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="text-center mt-5">
+        <h1 class="display-4">Welcome to Your Media App</h1>
+        <p class="lead">Discover and explore a world of movies and books.</p>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <img src="/images/HomePageMovie.jpg" class="card-img-top" alt="Movie Image">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Latest Movies</h5>
+                    <p class="card-text">Explore our collection of the latest and greatest movies.</p>
+                    <a href="/movies" class="btn btn-primary">View Movies</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <img src="/images/HomePageBook.jpg" class="card-img-top" height="350" alt="Book Image">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Bestselling Books</h5>
+                    <p class="card-text">Dive into our curated selection of bestselling books.</p>
+                    <a href="/books" class="btn btn-primary">View Books</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5 d-flex justify-content-center">
+        <p class="text-muted">Ready to explore? Start your journey with movies and books that captivate your imagination by <a href="/Identity/Account/Register">Registering</a> to our website.</p>
+        <p>Have an account? <a href="/Identity/Account/Login">Log in</a> to save your favorites and discover personalized recommendations.</p>
+    </div>
 </div>
