@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\wwwroot\\images\\HomePageBackground.jpg",
+      "PackagePath": "staticwebassets\\images\\HomePageBackground.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\wwwroot\\images\\HomePageBook.jpg",
+      "PackagePath": "staticwebassets\\images\\HomePageBook.jpg"
+    },
+    {
+      "Id": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\wwwroot\\images\\HomePageMovie.jpg",
+      "PackagePath": "staticwebassets\\images\\HomePageMovie.jpg"
+    },
+    {
       "Id": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
