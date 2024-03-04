@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Book_App.Controllers
+namespace Book_App.Controllers.Home
 {
     public class HomeController : Controller
     {
@@ -14,6 +14,11 @@ namespace Book_App.Controllers
         }
 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult AllBooks()
         {
             return View();
         }
