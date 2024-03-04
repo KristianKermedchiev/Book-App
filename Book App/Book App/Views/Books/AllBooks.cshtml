@@ -1,12 +1,67 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     ViewData["Title"] = "All Books";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
-    <div class="text-center mt-5">
-        <h1 class="display-4">@ViewData["Title"]</h1>
+
+<div class="container mt-4">
+    <div class="row mb-3">
+        <div class="col-sm-12 col-md-4 mb-3">
+            <div class="input-group">
+                <label for="genreFilter" class="input-group-text">Filter by Genre</label>
+                <select class="form-select" id="genreFilter">
+                    <!-- Add your genre options here -->
+                    <option value="fantasy">Fantasy</option>
+                    <option value="mystery">Mystery</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 mb-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search by Title">
+                <button class="btn btn-outline-secondary" type="button">Search</button>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 text-center text-md-start">
+            <a href="#" class="btn btn-primary">Create a Book</a>
+        </div>
+    </div>
+
+    <h2 class="mb-4 d-flex justify-content-center">@ViewData["Title"]</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="book.ImageUrl" class="card-img-top" alt="book.Title">
+                <div class="card-body">
+                    <h5 class="card-title">book.Title</h5>
+                    <p class="card-text">book.Author</p>
+                    <p class="card-text"><small class="text-muted">Published: book.PublishDate.ToShortDateString()</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 d-flex justify-content-center fixed-bottom" style="margin-bottom: 30px;">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                </li>
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link">1</span>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>
+
