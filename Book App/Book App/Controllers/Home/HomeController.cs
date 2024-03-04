@@ -18,11 +18,6 @@ namespace Book_App.Controllers.Home
             return View();
         }
 
-        public IActionResult AllBooks()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
