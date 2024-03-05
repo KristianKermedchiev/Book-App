@@ -20,12 +20,6 @@ namespace Book_App.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Book>()
-                .HasOne(b => b.Owner)
-                .WithMany(u => u.OwnedBooks)
-                .HasForeignKey(b => b.OwnerId)
-                .OnDelete(DeleteBehavior.Restrict);
-
             modelBuilder.Entity<Movie>()
                 .HasMany(m => m.Genres)
                 .WithMany(g => g.Movies)

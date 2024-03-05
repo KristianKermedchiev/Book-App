@@ -29,6 +29,5 @@ namespace Book_App.Models
         public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
         public int Duration { get; set; }
         public string OwnerId { get; set; } = null;
-        public User Owner { get; set; } = null;
     }
 }
