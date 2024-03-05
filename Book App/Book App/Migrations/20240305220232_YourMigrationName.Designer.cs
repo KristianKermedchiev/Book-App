@@ -12,14 +12,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Book_App.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240225204543_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240305220232_YourMigrationName")]
+    partial class YourMigrationName
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.26")
+                .HasAnnotation("ProductVersion", "6.0.27")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -49,30 +49,20 @@ namespace Book_App.Migrations
 
                     b.Property<string>("OwnerId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Pages")
                         .HasColumnType("int");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("YearPublished")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OwnerId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Books");
                 });
@@ -122,7 +112,7 @@ namespace Book_App.Migrations
 
                     b.Property<string>("OwnerId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -133,8 +123,6 @@ namespace Book_App.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OwnerId");
 
                     b.ToTable("Movies");
                 });
@@ -192,11 +180,6 @@ namespace Book_App.Migrations
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
-
-                    b.Property<string>("EmailAddress")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
@@ -424,32 +407,6 @@ namespace Book_App.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Book_App.Models.Book", b =>
-                {
-                    b.HasOne("Book_App.Models.User", "Owner")
-                        .WithMany("OwnedBooks")
-                        .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Book_App.Models.User", null)
-                        .WithMany("WishListBooks")
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Owner");
-                });
-
-            modelBuilder.Entity("Book_App.Models.Movie", b =>
-                {
-                    b.HasOne("Book_App.Models.User", "Owner")
-                        .WithMany()
-                        .HasForeignKey("OwnerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Owner");
-                });
-
             modelBuilder.Entity("Book_App.Models.Rating", b =>
                 {
                     b.HasOne("Book_App.Models.Book", "Book")
@@ -566,13 +523,6 @@ namespace Book_App.Migrations
             modelBuilder.Entity("Book_App.Models.Movie", b =>
                 {
                     b.Navigation("Ratings");
-                });
-
-            modelBuilder.Entity("Book_App.Models.User", b =>
-                {
-                    b.Navigation("OwnedBooks");
-
-                    b.Navigation("WishListBooks");
                 });
 #pragma warning restore 612, 618
         }
