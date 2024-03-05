@@ -1,6 +1,6 @@
 using Book_App.Data;
 using Book_App.Models;
-using Microsoft.AspNetCore.Identity;
+using Book_App.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,11 +23,46 @@ builder.Services
 
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<BookService>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseMigrationsEndPoint();
+
+    using (var scope = app.Services.CreateScope())
+    {
+        var services = scope.ServiceProvider;
+        try
+        {
+            var context = services.GetRequiredService<ApplicationDbContext>();
+
+            // Check if there are already genres in the database
+            if (!context.Genres.Any())
+            {
+                // Add some example genres
+                var genres = new List<Genre>
+                {
+                    new Genre { Name = "Fiction" },
+                    new Genre { Name = "Mystery" },
+                    new Genre { Name = "Thriller" },
+                    new Genre { Name = "Romantic" },
+                    new Genre { Name = "Classics" },
+                    new Genre { Name = "Sci-Fi" },
+                    new Genre { Name = "Horror" },
+                };
+
+                context.Genres.AddRange(genres);
+                context.SaveChanges();
+            }
+        }
+        catch (Exception ex)
+        {
+            var logger = services.GetRequiredService<ILogger<Program>>();
+            logger.LogError(ex, "An error occurred while seeding the database.");
+        }
+    }
 }
 else
 {
