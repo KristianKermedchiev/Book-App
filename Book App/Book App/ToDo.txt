@@ -1,4 +1,4 @@
-1. Fix CSS on the Home page for medium screen devices, works for small and large.
+1. Fix CSS on the Home page for medium screen devices, works for small and large. - Done
 
 2. Fix CSS on the ALLBooks page as to have a stable view on the books.
 

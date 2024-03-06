@@ -20,28 +20,30 @@
     </div>
 
     <div class="row mt-5">
-        <div class="col-md-6">
-            <div class="card">
-                <img src="/images/HomePageMovie.jpg" class="card-img-top" alt="Movie Image">
-                <div class="card-body text-center">
+        <div class="col-lg-6 mb-4">
+            <div class="card h-100 d-flex flex-column">
+                <img src="/images/HomePageMovie.jpg" class="card-img-top" style="height:350px" alt="Movie Image">
+                <div class="card-body text-center flex-grow-1">
                     <h5 class="card-title">Latest Movies</h5>
                     <p class="card-text">Explore our collection of the latest and greatest movies.</p>
-                    <a asp-controller="Movies" asp-action="AllMovies" class="btn btn-primary">View Movies</a>
+                    <a asp-controller="Movies" asp-action="AllMovies" class="btn btn-primary mt-auto">View Movies</a>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="card">
-                <img src="/images/HomePageBook.jpg" class="card-img-top" height="350" alt="Book Image">
-                <div class="card-body text-center">
+        <div class="col-lg-6 mb-4">
+            <div class="card h-100 d-flex flex-column">
+                <img src="/images/HomePageBook.jpg" class="card-img-top" style="height:350px" alt="Book Image">
+                <div class="card-body text-center flex-grow-1">
                     <h5 class="card-title">Bestselling Books</h5>
                     <p class="card-text">Dive into our curated selection of bestselling books.</p>
-                    <a asp-controller="Books" asp-action="AllBooks" class="btn btn-primary">View Books</a>
+                    <a asp-controller="Books" asp-action="AllBooks" class="btn btn-primary mt-auto">View Books</a>
                 </div>
             </div>
         </div>
     </div>
+
+
     @if (!SignInManager.IsSignedIn(User))
     {
         <div class="mt-5 d-flex justify-content-center">
