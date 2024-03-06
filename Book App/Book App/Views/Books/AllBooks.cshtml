@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<Book_App.Models.Book>
+
+@{
     ViewData["Title"] = "All Books";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -29,17 +31,20 @@
 
     <h2 class="mb-5 mt-3 d-flex justify-content-center">@ViewData["Title"]</h2>
 
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-            <div class="card h-100">
-                <img src="book.ImageUrl" class="card-img-top" alt="book.Title">
-                <div class="card-body">
-                    <h5 class="card-title">book.Title</h5>
-                    <p class="card-text">book.Author</p>
-                    <p class="card-text"><small class="text-muted">Published: book.PublishDate.ToShortDateString()</small></p>
+   <div class="row row-cols-1 row-cols-md-2 g-4">
+        @foreach (var book in Model)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <img src="@book.ImgUrl" class="card-img-top" alt="@book.Title">
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">@book.Author</p>
+                        <p class="card-text"><small class="text-muted">Published: @book.YearPublished</small></p>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     </div>
 
     <div class="mt-4 d-flex justify-content-center fixed-bottom" style="margin-bottom: 30px;">

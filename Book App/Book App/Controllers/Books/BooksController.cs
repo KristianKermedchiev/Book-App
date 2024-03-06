@@ -65,7 +65,9 @@ namespace Book_App.Controllers.Books
 
         public IActionResult AllBooks()
         {
-            return View();
+            var allBooks = _context.Books.ToList();
+
+            return View(allBooks);
         }
     }
 }
