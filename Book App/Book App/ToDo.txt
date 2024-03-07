@@ -1,5 +1,20 @@
-1. Add Details page.
 
-2. Add Update/Delete functions for the owner of the media.
+1. Ratins System.
 
-3. 
+2. Update the CSS of the Update page.
+
+3. Add Search function.
+
+4. Add Pagination.
+
+5. Add filter function.
+
+6. Create the Admin page and role and stuffs.
+
+7. Modify the Profile page.
+
+8. Add the rating system.
+
+10.Add Password reset function.
+
+11. Add Unit Tests.

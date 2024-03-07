@@ -5,6 +5,8 @@ namespace Book_App.Models
 {
     public class CreateBookViewModel
     {
+        public int Id { get; set; }
+
         [Required(ErrorMessage = "Title is required.")]
         [StringLength(Constants.MediaConstants.TitleMaxLength, MinimumLength = Constants.MediaConstants.TitleMinLength, ErrorMessage = "Title must be between 2 and 25 characters.")]
         public string Title { get; set; }

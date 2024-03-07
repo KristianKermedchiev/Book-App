@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using Book_App.Common;
 
 namespace Book_App.Models
@@ -31,5 +32,8 @@ namespace Book_App.Models
 
         public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
         public string OwnerId { get; set; } = null;
+
+        [NotMapped]
+        public List<int> UpdatedGenreIds { get; set; }
     }
 }
