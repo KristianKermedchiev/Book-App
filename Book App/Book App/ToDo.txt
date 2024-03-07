@@ -1,4 +1,5 @@
-1. Fix CSS on the Home page for medium screen devices, works for small and large. - Done
+1. Add Details page.
 
-2. Fix CSS on the ALLBooks page as to have a stable view on the books.
+2. Add Update/Delete functions for the owner of the media.
 
+3. 
