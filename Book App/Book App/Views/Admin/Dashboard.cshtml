@@ -1,0 +1,22 @@
+﻿@model List<Book>
+
+<h2>Admin Dashboard</h2>
+
+@foreach (var book in Model)
+{
+    <div>
+        <h3>@book.Title</h3>
+        <p>@book.Description</p>
+        <!-- Display other properties as needed -->
+
+        <form asp-controller="Admin" asp-action="Approve" method="post">
+            <input type="hidden" name="id" value="@book.Id" />
+            <button type="submit">Approve</button>
+        </form>
+
+        <form asp-controller="Admin" asp-action="Reject" method="post">
+            <input type="hidden" name="id" value="@book.Id" />
+            <button type="submit">Reject</button>
+        </form>
+    </div>
+}

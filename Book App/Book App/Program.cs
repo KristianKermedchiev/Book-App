@@ -1,14 +1,22 @@
 using Book_App.Data;
 using Book_App.Models;
 using Book_App.Services;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
-
 
 builder.Services
     .AddDefaultIdentity<User>(options =>
@@ -19,11 +27,14 @@ builder.Services
         options.Password.RequireUppercase = true;
         options.Password.RequireNonAlphanumeric = false;
     })
+    .AddRoles<IdentityRole>() // Add roles
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<BookService>();
+builder.Services.AddScoped<IBookService, BookService>();
+
 
 var app = builder.Build();
 
@@ -55,6 +66,42 @@ if (app.Environment.IsDevelopment())
 
                 context.Genres.AddRange(genres);
                 context.SaveChanges();
+            }
+
+            var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = services.GetRequiredService<UserManager<User>>();
+
+            var roles = new string[] { "Administrator" };
+
+            foreach (var role in roles)
+            {
+                var roleExists = await roleManager.RoleExistsAsync(role);
+
+                if (!roleExists)
+                {
+                    // Create the role
+                    await roleManager.CreateAsync(new IdentityRole(role));
+                }
+            }
+
+            // Check if there are already users with Administrator role
+            var adminUser = await userManager.FindByNameAsync("admin@example.com");
+
+            if (adminUser == null)
+            {
+                // If no user found, create an admin user
+                var admin = new User
+                {
+                    UserName = "admin@example.com",
+                    Email = "admin@example.com",
+                };
+
+                var result = await userManager.CreateAsync(admin, "AdminPassword123!");
+
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(admin, "Administrator");
+                }
             }
         }
         catch (Exception ex)

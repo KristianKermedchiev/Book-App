@@ -35,5 +35,7 @@ namespace Book_App.Models
 
         [NotMapped]
         public List<int> UpdatedGenreIds { get; set; }
+
+        public bool IsApproved { get; set; }
     }
 }

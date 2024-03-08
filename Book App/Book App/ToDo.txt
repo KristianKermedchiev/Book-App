@@ -13,8 +13,6 @@
 
 7. Modify the Profile page.
 
-8. Add the rating system.
-
 10.Add Password reset function.
 
 11. Add Unit Tests.

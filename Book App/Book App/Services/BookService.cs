@@ -32,5 +32,34 @@ namespace Book_App.Services
                 .Include(b => b.Genres) // Include related entities if needed
                 .FirstOrDefault(b => b.Id == bookId);
         }
+
+        public List<Book> GetPendingSubmissions()
+        {
+            var pendingSubmissions = _context.Books
+                .Where(book => !book.IsApproved)
+                .ToList();
+
+            return pendingSubmissions;
+        }
+
+        public void ApproveBook(int bookId)
+        {
+            var book = _context.Books.Find(bookId);
+            if (book != null)
+            {
+                book.IsApproved = true;
+                _context.SaveChanges();
+            }
+        }
+
+        public void RejectBook(int bookId)
+        {
+            var book = _context.Books.Find(bookId);
+            if (book != null)
+            {
+                _context.Books.Remove(book);
+                _context.SaveChanges();
+            }
+        }
     }
 }

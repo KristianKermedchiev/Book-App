@@ -9,7 +9,8 @@ namespace Book_App.Services
         Book GetBookById(int bookId);
 
         void UpdateBook(Book updatedBook);
-
-        //IEnumerable<Book> GetAllBooks();
+        List<Book> GetPendingSubmissions();
+        void ApproveBook(int bookId);
+        void RejectBook(int bookId);
     }
 }
