@@ -56,6 +56,11 @@
         background-color: #dc3545; /* Red */
         border-color: #dc3545;
     }
+
+    /* Style for text */
+    p, h5 {
+        font-size: 16px; /* Adjust the font size as needed */
+    }
 </style>
 
 <h2 class="text-center">@Model.Title</h2>
@@ -73,12 +78,16 @@
     <p>Description: @Model.Description</p>
 
     <h5 class="d-flex justify-content-center">Genres:</h5>
-    <ul class="genres-list d-flex justify-content-center    ">
+    <div class="genres-list d-flex justify-content-center">
         @foreach (var genre in Model.Genres)
         {
-            <li style="margin-right: 10px; font-size:20px">@genre.Name</li>
+            <p class="card-text">@genre.Name</p>
+            @if (genre != Model.Genres.Last())
+            {
+                <span>&nbsp; - &nbsp; </span>
+            }
         }
-    </ul>
+    </div>
 
     @if (User.Identity.IsAuthenticated && User.FindFirst(ClaimTypes.NameIdentifier)?.Value == Model.OwnerId)
     {

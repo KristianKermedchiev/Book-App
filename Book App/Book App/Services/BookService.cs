@@ -27,9 +27,8 @@ namespace Book_App.Services
 
         public Book GetBookById(int bookId)
         {
-            // Retrieve the book by ID from the database
             return _context.Books
-                .Include(b => b.Genres) // Include related entities if needed
+                .Include(b => b.Genres) 
                 .FirstOrDefault(b => b.Id == bookId);
         }
 
@@ -37,6 +36,7 @@ namespace Book_App.Services
         {
             var pendingSubmissions = _context.Books
                 .Where(book => !book.IsApproved)
+                .Include(book => book.Genres)
                 .ToList();
 
             return pendingSubmissions;

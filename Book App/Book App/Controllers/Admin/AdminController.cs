@@ -1,6 +1,4 @@
-﻿using Book_App.Data;
-using Book_App.Models;
-using Book_App.Services;
+﻿using Book_App.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,6 +15,11 @@ public class AdminController : Controller
     public IActionResult Dashboard()
     {
         var pendingSubmissions = _bookService.GetPendingSubmissions();
+        foreach (var book in pendingSubmissions)
+        {
+            // Log or print genres for debugging
+            Console.WriteLine($"Book {book.Id} Genres: {string.Join(", ", book.Genres.Select(genre => genre.Name))}");
+        }
         return View(pendingSubmissions);
     }
 

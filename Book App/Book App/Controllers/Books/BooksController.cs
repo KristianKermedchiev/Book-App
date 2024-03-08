@@ -171,7 +171,10 @@ namespace Book_App.Controllers.Books
 
         public IActionResult AllBooks()
         {
-            var approvedBooks = _context.Books.Where(book => book.IsApproved).ToList();
+            var approvedBooks = _context.Books
+                .Where(book => book.IsApproved)
+                .Include(book => book.Genres) 
+                .ToList();
 
             return View(approvedBooks);
         }

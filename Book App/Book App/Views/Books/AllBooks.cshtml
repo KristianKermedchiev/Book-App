@@ -6,25 +6,27 @@
 }
 
 <div class="container mt-4">
-    <div class="row mb-3">
-        <div class="col-12 col-md-4 mb-3">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4 col-lg-4 col-sm-8 mb-3">
             <div class="input-group">
                 <label for="genreFilter" class="input-group-text">Filter by Genre</label>
                 <select class="form-select" id="genreFilter">
-                    <!-- Add your genre options here -->
-                    <option value="fantasy">Fantasy</option>
+                    <option value="fantasy">Classics</option>
+                    <option value="mystery">Horror</option>
                     <option value="mystery">Mystery</option>
+                    <option value="mystery">Romantic</option>
+                    <option value="mystery">"Sci-Fi</option>
+                    <option value="mystery">Thriller</option>
                 </select>
             </div>
         </div>
-        <div class="col-12 col-md-4 mb-3">
+        <div class="col-12 col-md-3 col-lg-3 col-sm-8 mb-3">
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search by Title">
-                <button class="btn btn-outline-secondary"
-                                <button class="btn btn-outline-secondary" type="button">Search</button>
+                <button class="btn btn-outline-secondary" type="button">Search</button>
             </div>
         </div>
-        <div class="col-12 col-md-4 text-center text-md-start">
+        <div class="col-12 col-md-2 col-lg-2 col-sm-7 text-center text-md-start">
             <a asp-controller="Books" asp-action="Create" class="btn btn-primary">Create a Book</a>
         </div>
     </div>
@@ -43,6 +45,11 @@
                         <h5 class="card-title">@book.Title</h5>
                         <p class="card-text">@book.Author</p>
                         <p class="card-text"><small class="text-muted">Published: @book.YearPublished</small></p>
+                        @if (book.Genres.Any())
+                        {
+                            var genreNames = book.Genres.Select(genre => genre.Name);
+                            <p class="card-text"><small class="text-muted">Genres: @string.Join(", ", genreNames)</small></p>
+                        }
                         <a asp-controller="Books" asp-action="Details" asp-route-id="@book.Id" class="btn btn-primary">View Details</a>
                     </div>
                 </div>

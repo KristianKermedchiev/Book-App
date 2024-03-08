@@ -1,22 +1,37 @@
-﻿@model List<Book>
+﻿@model List<Book_App.Models.Book>
 
-<h2>Admin Dashboard</h2>
+<h2 class="text-center mt-3">Admin Dashboard</h2>
 
 @foreach (var book in Model)
 {
-    <div>
-        <h3>@book.Title</h3>
-        <p>@book.Description</p>
-        <!-- Display other properties as needed -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <h3 class="card-title">@book.Title</h3>
+            <p class="card-text">@book.Description</p>
+            <p class="card-text"><strong>Author:</strong> @book.Author</p>
+            <img src="@book.ImgUrl" alt="@book.Title" class="img-fluid mb-3" style="max-height: 200px" />
 
-        <form asp-controller="Admin" asp-action="Approve" method="post">
-            <input type="hidden" name="id" value="@book.Id" />
-            <button type="submit">Approve</button>
-        </form>
+            <p class="card-text"><strong>Description:</strong> @book.Description</p>
+            <p class="card-text"><strong>Pages:</strong> @book.Pages</p>
+            <p class="card-text"><strong>Year Published:</strong> @book.YearPublished</p>
+            @if (book.Genres.Any())
+            {
+                var genreNames = book.Genres.Select(genre => genre.Name);
+                Console.WriteLine("Genre Names: " + string.Join(", ", genreNames));
+                <p class="card-text"><strong>Genres: @string.Join(", ", genreNames)</strong></p>
+            }
 
-        <form asp-controller="Admin" asp-action="Reject" method="post">
-            <input type="hidden" name="id" value="@book.Id" />
-            <button type="submit">Reject</button>
-        </form>
+            <div class="d-flex justify-content-end">
+                <form asp-controller="Admin" asp-action="Approve" method="post" class="me-2">
+                    <input type="hidden" name="id" value="@book.Id" />
+                    <button type="submit" class="btn btn-success">Approve</button>
+                </form>
+
+                <form asp-controller="Admin" asp-action="Reject" method="post">
+                    <input type="hidden" name="id" value="@book.Id" />
+                    <button type="submit" class="btn btn-danger">Reject</button>
+                </form>
+            </div>
+        </div>
     </div>
 }
