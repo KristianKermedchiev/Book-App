@@ -164,14 +164,29 @@ namespace Book_App.Controllers.Books
             return RedirectToAction("AllBooks");
         }
 
-        public IActionResult AllBooks()
+        public IActionResult AllBooks(int page = 1, int pageSize = 3)
         {
-            var approvedBooks = _context.Books
+            var approvedBooks = _context.Books.Where(book => book.IsApproved);
+            var totalBooks = approvedBooks.Count();
+
+            var totalPages = (int)Math.Ceiling((double)totalBooks / pageSize);
+
+            var books = _context.Books
                 .Where(book => book.IsApproved)
-                .Include(book => book.Genres) 
+                .Include(book => book.Genres)
+                .OrderByDescending(book => book.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .ToList();
 
-            return View(approvedBooks);
+            var viewModel = new PaginatedBooksViewModel
+            {
+                Books = books,
+                CurrentPage = page,
+                TotalPages = totalPages
+            };
+
+            return View(viewModel);
         }
     }
 }
