@@ -1,18 +1,15 @@
 
 1. Ratins System.
 
-2. Update the CSS of the Update page. - Done
+2.Validation on DB, Client and Server.
 
-3. Add Search function.
+3. Modify the Profile page.
 
-4. Add Pagination.
+4.Add Password reset function.
 
-5. Add filter function.
+5. Add Unit Tests.
 
-6. Create the Admin page and role and stuffs. - Done.
+6. 404 and 500 error pages.
 
-7. Modify the Profile page.
+7.
 
-10.Add Password reset function.
-
-11. Add Unit Tests.
