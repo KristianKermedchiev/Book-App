@@ -64,6 +64,13 @@
         border: 1px solid #ddd;
         padding: 10px;
         margin-bottom: 10px;
+        position: relative;
+    }
+
+    .delete-button {
+        position: absolute;
+        top: 5px;
+        right: 5px;
     }
 
     .retract-button {
@@ -148,6 +155,14 @@
                         <span>Posted on @comment.CreatedAt</span>
                     }
                 </small>
+
+                @if (User.Identity.IsAuthenticated && User.FindFirst(ClaimTypes.NameIdentifier)?.Value == comment.UserId)
+                {
+                    <form asp-controller="Comments" asp-action="Delete" method="post" onsubmit="return confirm('Are you sure you want to delete this comment?');">
+                        <input type="hidden" name="id" value="@comment.Id" />
+                        <button type="submit" class="btn btn-danger btn-sm delete-button">Delete</button>
+                    </form>
+                }
             </div>
         }
     </div>
@@ -156,7 +171,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-        // Add click event for toggling comments visibility
         $('#toggle-comments').click(function () {
             $('#comments-container').slideToggle();
         });

@@ -44,62 +44,6 @@ namespace Book_App.Controllers.Comments
         }
 
         [HttpGet]
-        public async Task<IActionResult> Edit(int id)
-        {
-            var comment = await _context.Comments.FindAsync(id);
-
-            if (comment == null)
-            {
-                return NotFound();
-            }
-
-            return View(comment);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Comment updatedComment)
-        {
-            if (id != updatedComment.Id)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    var comment = await _context.Comments.FindAsync(id);
-
-                    if (comment == null || comment.UserId != User.Identity.Name)
-                    {
-                        return NotFound();
-                    }
-
-                    comment.Content = updatedComment.Content;
-
-                    _context.Update(comment);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CommentExists(id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-
-                return RedirectToAction("Details", "Books", new { id = updatedComment.BookId });
-            }
-
-            return View(updatedComment);
-        }
-
-        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             var comment = await _context.Comments.FindAsync(id);
@@ -126,13 +70,7 @@ namespace Book_App.Controllers.Comments
             _context.Comments.Remove(comment);
             await _context.SaveChangesAsync();
 
-            // Redirect to the book details page
             return RedirectToAction("Details", "Books", new { id = comment.BookId });
-        }
-
-        private bool CommentExists(int id)
-        {
-            return _context.Comments.Any(e => e.Id == id);
         }
 
         public IActionResult Index()
