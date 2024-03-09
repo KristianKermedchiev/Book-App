@@ -10,13 +10,15 @@
         <div class="col-12 col-md-4 col-lg-4 col-sm-8 mb-3">
             <div class="input-group">
                 <label for="genreFilter" class="input-group-text">Filter by Genre</label>
-                <select class="form-select" id="genreFilter">
-                    <option value="fantasy">Classics</option>
-                    <option value="mystery">Horror</option>
+                <select class="form-select" id="genreFilter" onchange="filterBooks()">
+                    <option value="all" selected>All Genres</option>
+                    <option value="classics">Classics</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="horror">Horror</option>
                     <option value="mystery">Mystery</option>
-                    <option value="mystery">Romantic</option>
-                    <option value="mystery">"Sci-Fi</option>
-                    <option value="mystery">Thriller</option>
+                    <option value="romantic">Romantic</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                    <option value="thriller">Thriller</option>
                 </select>
             </div>
         </div>
@@ -36,10 +38,10 @@
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" style="margin-bottom:65px">
         @foreach (var book in Model)
         {
-            <div class="col">
+            <div class="col" data-genres="@string.Join(",", book.Genres.Select(genre => genre.Name.ToLower()))">
                 <div class="card h-100 border-0">
                     <div class="d-flex justify-content-center">
-                        <img src="@book.ImgUrl" class="card-img-top" alt="@book.Title" style="width: 50%; height: 300px; object-fit: cover;">
+                        <img src="@book.ImgUrl" class="card-img-top" alt="@book.Title" style="width: 50%; height: 350px;">
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">@book.Title</h5>
@@ -80,3 +82,24 @@
         </nav>
     </div>
 </div>
+
+@section scripts {
+    <script>
+        function filterBooks() {
+            var selectedGenre = document.getElementById("genreFilter").value;
+
+            var bookCards = document.getElementsByClassName("col");
+
+            for (var i = 0; i < bookCards.length; i++) {
+                var bookCard = bookCards[i];
+                var genres = bookCard.getAttribute("data-genres");
+
+                if (selectedGenre === "all" || genres.includes(selectedGenre)) {
+                    bookCard.style.display = "block";
+                } else {
+                    bookCard.style.display = "none";
+                }
+            }
+        }
+    </script>
+}

@@ -97,7 +97,6 @@ namespace Book_App.Controllers.Books
         {
             if (ModelState.IsValid)
             {
-                // Retrieve existing book without tracking
                 var existingBook = _context.Books
                     .Include(b => b.Genres)
                     .SingleOrDefault(b => b.Id == model.Id);
@@ -107,7 +106,6 @@ namespace Book_App.Controllers.Books
                     return NotFound();
                 }
 
-                // Update book properties
                 existingBook.Title = model.Title;
                 existingBook.Description = model.Description;
                 existingBook.Author = model.Author;
@@ -115,10 +113,8 @@ namespace Book_App.Controllers.Books
                 existingBook.YearPublished = model.YearPublished;
                 existingBook.Pages = model.Pages;
 
-                // Clear existing genres
                 existingBook.Genres.Clear();
 
-                // Update genres
                 foreach (var genreId in model.Genres)
                 {
                     var genre = _context.Genres.Find(genreId);
@@ -128,7 +124,6 @@ namespace Book_App.Controllers.Books
                     }
                 }
 
-                // Update the book entity
                 _context.Update(existingBook);
                 _context.SaveChanges();
 

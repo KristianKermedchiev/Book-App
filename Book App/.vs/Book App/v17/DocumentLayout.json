@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\books\\updatebook.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\views\\books\\updatebook.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\books\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\views\\books\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\books\\allbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\views\\books\\allbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\todo.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\todo.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\books\\allbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\views\\books\\allbooks.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\admin\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -43,18 +51,6 @@
       "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\services\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\books\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\views\\books\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\books\\updatebook.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\views\\books\\updatebook.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Migrations\\20240308091440_UpdateBookModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Book App\\Migrations\\20240308091440_UpdateBookModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -69,6 +65,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\models\\createbookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\models\\createbookviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|c:\\users\\grigs\\documents\\github\\book-app\\book app\\book app\\migrations\\20240308091440_updatebookmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F0DDD3C-73D2-4930-8CEF-89BC82FFFC21}|Book App\\Book App.csproj|solutionrelative:book app\\migrations\\20240308091440_updatebookmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,17 +78,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 0,
               "Title": "UpdateBook.cshtml",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\UpdateBook.cshtml",
               "RelativeDocumentMoniker": "Book App\\Views\\Books\\UpdateBook.cshtml",
               "ToolTip": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\UpdateBook.cshtml",
               "RelativeToolTip": "Book App\\Views\\Books\\UpdateBook.cshtml",
-              "ViewState": "AQIAADAAAAAAAAAAAAAAABQAAAAtAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAcwDgAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-03-07T17:12:06.18Z",
               "IsPinned": true,
@@ -96,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "BooksController.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Controllers\\Books\\BooksController.cs",
               "RelativeDocumentMoniker": "Book App\\Controllers\\Books\\BooksController.cs",
@@ -110,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Dashboard.cshtml",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Admin\\Dashboard.cshtml",
               "RelativeDocumentMoniker": "Book App\\Views\\Admin\\Dashboard.cshtml",
@@ -118,8 +118,7 @@
               "RelativeToolTip": "Book App\\Views\\Admin\\Dashboard.cshtml",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-08T08:49:40.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-08T08:49:40.041Z"
             },
             {
               "$type": "Document",
@@ -129,14 +128,14 @@
               "RelativeDocumentMoniker": "Book App\\Views\\Books\\AllBooks.cshtml",
               "ToolTip": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\AllBooks.cshtml",
               "RelativeToolTip": "Book App\\Views\\Books\\AllBooks.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD4AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-03-07T17:19:04.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "CreateBook.cshtml",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\CreateBook.cshtml",
               "RelativeDocumentMoniker": "Book App\\Views\\Books\\CreateBook.cshtml",
@@ -144,25 +143,24 @@
               "RelativeToolTip": "Book App\\Views\\Books\\CreateBook.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-05T22:16:13.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T22:16:13.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\Details.cshtml",
               "RelativeDocumentMoniker": "Book App\\Views\\Books\\Details.cshtml",
               "ToolTip": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\Details.cshtml",
               "RelativeToolTip": "Book App\\Views\\Books\\Details.cshtml",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAgwGQAAAAOAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAgwGQAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-03-07T17:21:09.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "20240308091440_UpdateBookModel.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Migrations\\20240308091440_UpdateBookModel.cs",
               "RelativeDocumentMoniker": "Book App\\Migrations\\20240308091440_UpdateBookModel.cs",
@@ -170,12 +168,11 @@
               "RelativeToolTip": "Book App\\Migrations\\20240308091440_UpdateBookModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T09:14:40.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-08T09:14:40.352Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Book App\\Views\\Shared\\_LoginPartial.cshtml",
@@ -183,12 +180,11 @@
               "RelativeToolTip": "Book App\\Views\\Shared\\_LoginPartial.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-08T09:08:37.621Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-08T09:08:37.621Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Book App\\Views\\Shared\\_Layout.cshtml",
@@ -196,12 +192,11 @@
               "RelativeToolTip": "Book App\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-07T19:13:46.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-07T19:13:46.477Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Controllers\\Admin\\AdminController.cs",
               "RelativeDocumentMoniker": "Book App\\Controllers\\Admin\\AdminController.cs",
@@ -209,12 +204,11 @@
               "RelativeToolTip": "Book App\\Controllers\\Admin\\AdminController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-08T08:48:26.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-08T08:48:26.112Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Program.cs",
               "RelativeDocumentMoniker": "Book App\\Program.cs",
@@ -222,12 +216,11 @@
               "RelativeToolTip": "Book App\\Program.cs",
               "ViewState": "AQIAADAAAAAAAAAAAAAgwDkAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T21:34:58.362Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-07T21:34:58.362Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Genre.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Models\\Genre.cs",
               "RelativeDocumentMoniker": "Book App\\Models\\Genre.cs",
@@ -235,12 +228,11 @@
               "RelativeToolTip": "Book App\\Models\\Genre.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-07T19:10:09.511Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-07T19:10:09.511Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ToDo.txt",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\ToDo.txt",
               "RelativeDocumentMoniker": "Book App\\ToDo.txt",
@@ -253,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "CreateBookViewModel.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Models\\CreateBookViewModel.cs",
               "RelativeDocumentMoniker": "Book App\\Models\\CreateBookViewModel.cs",
@@ -261,12 +253,11 @@
               "RelativeToolTip": "Book App\\Models\\CreateBookViewModel.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAA7wB8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T22:17:30.488Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T22:17:30.488Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "Book.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Models\\Book.cs",
               "RelativeDocumentMoniker": "Book App\\Models\\Book.cs",
@@ -274,12 +265,11 @@
               "RelativeToolTip": "Book App\\Models\\Book.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAAkwA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T22:41:39.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T22:41:39.175Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "IBookService.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Services\\IBookService.cs",
               "RelativeDocumentMoniker": "Book App\\Services\\IBookService.cs",
@@ -287,12 +277,11 @@
               "RelativeToolTip": "Book App\\Services\\IBookService.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAjwAsAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T22:13:47.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T22:13:47.038Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "BookService.cs",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Services\\BookService.cs",
               "RelativeDocumentMoniker": "Book App\\Services\\BookService.cs",
@@ -300,8 +289,7 @@
               "RelativeToolTip": "Book App\\Services\\BookService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T22:11:08.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T22:11:08.431Z"
             }
           ]
         }
