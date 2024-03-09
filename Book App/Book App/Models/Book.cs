@@ -37,5 +37,7 @@ namespace Book_App.Models
         public List<int> UpdatedGenreIds { get; set; }
 
         public bool IsApproved { get; set; }
+
+        public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }

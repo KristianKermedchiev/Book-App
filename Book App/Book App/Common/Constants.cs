@@ -44,5 +44,10 @@
             public const int EmailMinLength = 7;
             public const int EmailMaxLength = 35;
         }
+
+        public static class CommentConstants
+        {
+            public const int ContentMaxLength = 1000;
+        }
     }
 }

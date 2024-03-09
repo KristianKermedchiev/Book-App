@@ -135,9 +135,12 @@ namespace Book_App.Controllers.Books
         }
 
 
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            var book = _bookService.GetBookById(id);
+            var book = await _context.Books
+                .Include(b => b.Comments)
+                .ThenInclude(c => c.User)
+                .FirstOrDefaultAsync(b => b.Id == id);
 
             if (book == null)
             {
@@ -187,6 +190,32 @@ namespace Book_App.Controllers.Books
             };
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult AddComment(int id, string content)
+        {
+            // Fetch the book
+            var book = _context.Books.Include(b => b.Comments).FirstOrDefault(b => b.Id == id);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            // Create a new comment
+            var comment = new Comment
+            {
+                Content = content,
+                UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value,
+                CreatedAt = DateTime.Now
+            };
+
+            // Add the comment to the book
+            book.Comments.Add(comment);
+            _context.SaveChanges();
+
+            return RedirectToAction("Details", new { id = id });
         }
     }
 }

@@ -8,14 +8,12 @@
 }
 
 <style>
-    /* Style for the book details container */
     .book-details-container {
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
     }
 
-    /* Style for the book image */
     .book-image {
         max-width: 100%;
         height: auto;
@@ -23,13 +21,11 @@
         margin-bottom: 30px;
     }
 
-    /* Style for the genres list */
     .genres-list {
         list-style-type: none;
         padding: 0;
     }
 
-    /* Style for the buttons */
     .action-buttons {
         display: flex;
         justify-content: space-between;
@@ -41,25 +37,38 @@
             margin: 0 5px;
         }
 
-    /* Button colors */
     .btn-primary {
-        background-color: #007bff; /* Blue */
+        background-color: #007bff;
         border-color: #007bff;
     }
 
     .btn-success {
-        background-color: #28a745; /* Green */
+        background-color: #28a745; 
         border-color: #28a745;
     }
 
     .btn-danger {
-        background-color: #dc3545; /* Red */
+        background-color: #dc3545; 
         border-color: #dc3545;
     }
 
-    /* Style for text */
     p, h5 {
-        font-size: 16px; /* Adjust the font size as needed */
+        font-size: 16px; 
+    }
+
+    .comments-container {
+        margin-top: 20px;
+    }
+
+    .comment {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .retract-button {
+        cursor: pointer;
+        color: #007bff;
     }
 </style>
 
@@ -106,4 +115,50 @@
             <a asp-controller="Books" asp-action="AllBooks" class="btn btn-success">Back</a>
         </div>
     }
+
+
+    <h3 class="mt-5 d-flex justify-content-center">Add a Comment</h3>
+
+    <form asp-controller="Comments" asp-action="Create" method="post">
+        <input type="hidden" name="bookId" value="@Model.Id" />
+        <div class="form-group">
+            <label for="commentContent">Comment:</label>
+            <textarea class="form-control" id="commentContent" name="Content"></textarea>
+        </div>
+        <div></div>
+        <button type="submit" class="btn btn-primary mt-5">Add Comment</button>
+    </form>
+
+    <h3 class="mt-5 d-flex justify-content-center">
+        <span class="retract-button" id="toggle-comments">Toggle Comments (@Model.Comments.Count())</span>
+    </h3>
+
+    <div class="comments-container" id="comments-container">
+        @foreach (var comment in Model.Comments)
+        {
+            <div class="comment">
+                <p>@comment.Content</p>
+                <small>
+                    @if (comment.User != null)
+                    {
+                        <span>Posted by: @comment.User.UserName on @comment.CreatedAt</span>
+                    }
+                    else
+                    {
+                        <span>Posted on @comment.CreatedAt</span>
+                    }
+                </small>
+            </div>
+        }
+    </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Add click event for toggling comments visibility
+        $('#toggle-comments').click(function () {
+            $('#comments-container').slideToggle();
+        });
+    });
+</script>
