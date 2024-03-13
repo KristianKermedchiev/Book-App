@@ -1,5 +1,6 @@
 ﻿using Book_App.Common;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Book_App.Models
 {
@@ -15,8 +16,8 @@ namespace Book_App.Models
         [StringLength(Constants.MediaConstants.DescriptionMaxLength, ErrorMessage = "Description cannot exceed 500 characters.")]
         public string Description { get; set; } = string.Empty;
 
-        [StringLength(Constants.MediaConstants.DirectorNameMaxLength, ErrorMessage = "Author's name cannot exceed 10 characters.")]
-        public string Author { get; set; } = string.Empty;
+        [StringLength(Constants.MediaConstants.DirectorNameMaxLength, ErrorMessage = "Director's name cannot exceed 20 characters.")]
+        public string Director { get; set; } = string.Empty;
 
         [StringLength(Constants.MediaConstants.ImgUrlMaxLength, ErrorMessage = "Image URL cannot exceed 2048 characters.")]
         public string ImgUrl { get; set; }
@@ -27,7 +28,18 @@ namespace Book_App.Models
         public ICollection<Genre> Genres { get; set; } = new List<Genre>();
 
         public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+
         public int Duration { get; set; }
+
         public string OwnerId { get; set; } = null;
+
+        public double AverageRating { get; set; }
+
+        [NotMapped]
+        public List<int> UpdatedGenreIds { get; set; }
+
+        public bool IsApproved { get; set; }
+
+        //public ICollection<Comment> Comments { get; set; } = new List<Comment>();
     }
 }
