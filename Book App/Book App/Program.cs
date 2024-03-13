@@ -1,16 +1,8 @@
 using Book_App.Data;
 using Book_App.Models;
 using Book_App.Services.BookServices;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +19,7 @@ builder.Services
         options.Password.RequireUppercase = true;
         options.Password.RequireNonAlphanumeric = false;
     })
-    .AddRoles<IdentityRole>() // Add roles
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
@@ -49,10 +41,8 @@ if (app.Environment.IsDevelopment())
         {
             var context = services.GetRequiredService<ApplicationDbContext>();
 
-            // Check if there are already genres in the database
             if (!context.Genres.Any())
             {
-                // Add some example genres
                 var genres = new List<Genre>
                 {
                     new Genre { Name = "Fiction" },
@@ -79,24 +69,26 @@ if (app.Environment.IsDevelopment())
 
                 if (!roleExists)
                 {
-                    // Create the role
                     await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
 
-            // Check if there are already users with Administrator role
-            var adminUser = await userManager.FindByNameAsync("admin@example.com");
+            var configuration = services.GetRequiredService<IConfiguration>();
+            var adminUsername = configuration["AdminCredentials:Username"];
+            var adminPassword = configuration["AdminCredentials:Password"];
+
+            var adminUser = await userManager.FindByNameAsync(adminUsername);
+
 
             if (adminUser == null)
             {
-                // If no user found, create an admin user
                 var admin = new User
                 {
-                    UserName = "admin@example.com",
-                    Email = "admin@example.com",
+                    UserName = adminUsername,
+                    Email = adminUsername,
                 };
 
-                var result = await userManager.CreateAsync(admin, "AdminPassword123!");
+                var result = await userManager.CreateAsync(admin, adminPassword);
 
                 if (result.Succeeded)
                 {
