@@ -2,7 +2,7 @@
 using Book_App.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Book_App.Services
+namespace Book_App.Services.BookServices
 {
     public class BookService : IBookService
     {
@@ -28,7 +28,7 @@ namespace Book_App.Services
         public Book GetBookById(int bookId)
         {
             return _context.Books
-                .Include(b => b.Genres) 
+                .Include(b => b.Genres)
                 .FirstOrDefault(b => b.Id == bookId);
         }
 

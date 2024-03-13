@@ -1,6 +1,6 @@
 ﻿using Book_App.Models;
 
-namespace Book_App.Services
+namespace Book_App.Services.BookServices
 {
 
     public interface IBookService
