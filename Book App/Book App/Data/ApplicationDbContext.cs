@@ -35,7 +35,7 @@ namespace Book_App.Data
                 .HasOne(r => r.Book)
                 .WithMany(b => b.Ratings)
                 .HasForeignKey(r => r.BookId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -163,6 +163,9 @@ namespace Book_App.Controllers.Books
                 return NotFound();
             }
 
+            var ratings = _context.Ratings.Where(r => r.BookId == id);
+            _context.Ratings.RemoveRange(ratings);
+
             _context.Books.Remove(book);
             await _context.SaveChangesAsync();
 
