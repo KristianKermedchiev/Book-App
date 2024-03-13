@@ -140,6 +140,8 @@ namespace Book_App.Controllers.Books
             var book = await _context.Books
                 .Include(b => b.Comments)
                 .ThenInclude(c => c.User)
+                .Include(b => b.Genres)
+                .Include(b => b.Ratings)
                 .FirstOrDefaultAsync(b => b.Id == id);
 
             if (book == null)
@@ -195,7 +197,6 @@ namespace Book_App.Controllers.Books
         [HttpPost]
         public IActionResult AddComment(int id, string content)
         {
-            // Fetch the book
             var book = _context.Books.Include(b => b.Comments).FirstOrDefault(b => b.Id == id);
 
             if (book == null)
@@ -203,7 +204,6 @@ namespace Book_App.Controllers.Books
                 return NotFound();
             }
 
-            // Create a new comment
             var comment = new Comment
             {
                 Content = content,
@@ -211,11 +211,52 @@ namespace Book_App.Controllers.Books
                 CreatedAt = DateTime.Now
             };
 
-            // Add the comment to the book
             book.Comments.Add(comment);
             _context.SaveChanges();
 
             return RedirectToAction("Details", new { id = id });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Rate(int bookId, int ratingValue)
+        {
+            var book = await _context.Books.Include(b => b.Ratings).FirstOrDefaultAsync(b => b.Id == bookId);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (userId == null)
+            {
+                return Unauthorized();
+            }
+
+            var existingRating = _context.Ratings.FirstOrDefault(r => r.UserId == userId && r.BookId == bookId);
+
+            if (existingRating != null)
+            {
+                existingRating.RatingValue = ratingValue;
+            }
+            else
+            {
+                var newRating = new Rating
+                {
+                    UserId = userId,
+                    BookId = bookId,
+                    RatingValue = ratingValue
+                };
+
+                _context.Ratings.Add(newRating);
+            }
+
+            book.AverageRating = book.Ratings.Average(r => r.RatingValue);
+
+            _context.SaveChanges();
+
+            return Ok();
         }
     }
 }

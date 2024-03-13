@@ -17,7 +17,6 @@ public class AdminController : Controller
         var pendingSubmissions = _bookService.GetPendingSubmissions();
         foreach (var book in pendingSubmissions)
         {
-            // Log or print genres for debugging
             Console.WriteLine($"Book {book.Id} Genres: {string.Join(", ", book.Genres.Select(genre => genre.Name))}");
         }
         return View(pendingSubmissions);

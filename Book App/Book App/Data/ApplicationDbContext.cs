@@ -36,12 +36,6 @@ namespace Book_App.Data
                 .WithMany(b => b.Ratings)
                 .HasForeignKey(r => r.BookId)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<Rating>()
-                .HasOne(r => r.Movie)
-                .WithMany(m => m.Ratings)
-                .HasForeignKey(r => r.MovieId)
-                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

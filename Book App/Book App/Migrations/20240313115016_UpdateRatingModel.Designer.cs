@@ -4,6 +4,7 @@ using Book_App.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Book_App.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240313115016_UpdateRatingModel")]
+    partial class UpdateRatingModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -171,10 +173,12 @@ namespace Book_App.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("BookId")
+                    b.Property<int?>("BookId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("MovieId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("RatingValue")
@@ -464,9 +468,11 @@ namespace Book_App.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Book_App.Models.Movie", null)
+                    b.HasOne("Book_App.Models.Movie", "Movie")
                         .WithMany("Ratings")
-                        .HasForeignKey("MovieId");
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("Book_App.Models.User", "User")
                         .WithMany()
@@ -475,6 +481,8 @@ namespace Book_App.Migrations
                         .IsRequired();
 
                     b.Navigation("Book");
+
+                    b.Navigation("Movie");
 
                     b.Navigation("User");
                 });

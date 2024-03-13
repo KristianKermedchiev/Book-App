@@ -31,6 +31,9 @@ namespace Book_App.Models
         public ICollection<Genre> Genres { get; set; } = new List<Genre>();
 
         public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+
+        public double AverageRating { get; set; }
+
         public string OwnerId { get; set; } = null;
 
         [NotMapped]
