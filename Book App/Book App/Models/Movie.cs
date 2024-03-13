@@ -40,6 +40,6 @@ namespace Book_App.Models
 
         public bool IsApproved { get; set; }
 
-        //public ICollection<Comment> Comments { get; set; } = new List<Comment>();
+        public ICollection<MovieCommentModel> Comments { get; set; } = new List<MovieCommentModel>();
     }
 }

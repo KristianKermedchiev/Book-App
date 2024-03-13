@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Book_App.Models
 {
-    public class CreateBookViewModel
+    public class CreateMoviewViewModel
     {
         public int Id { get; set; }
 
@@ -14,8 +14,8 @@ namespace Book_App.Models
         [StringLength(Constants.MediaConstants.DescriptionMaxLength, ErrorMessage = "Description cannot exceed 500 characters.")]
         public string Description { get; set; }
 
-        [StringLength(Constants.MediaConstants.AuthorNameMaxLength, ErrorMessage = "Author's name cannot exceed 20 characters.")]
-        public string Author { get; set; }
+        [StringLength(Constants.MediaConstants.DirectorNameMaxLength, ErrorMessage = "Author's name cannot exceed 20 characters.")]
+        public string Director { get; set; }
 
         [StringLength(Constants.MediaConstants.ImgUrlMaxLength, ErrorMessage = "Image URL cannot exceed 2048 characters.")]
         public string ImgUrl { get; set; }
