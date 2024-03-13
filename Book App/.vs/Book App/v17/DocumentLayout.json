@@ -46,9 +46,9 @@
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\Details.cshtml",
               "RelativeDocumentMoniker": "Book App\\Views\\Books\\Details.cshtml",
-              "ToolTip": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\Details.cshtml*",
-              "RelativeToolTip": "Book App\\Views\\Books\\Details.cshtml*",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAcwGkAAABUAAAA",
+              "ToolTip": "C:\\Users\\GRIGS\\Documents\\GitHub\\Book-App\\Book App\\Book App\\Views\\Books\\Details.cshtml",
+              "RelativeToolTip": "Book App\\Views\\Books\\Details.cshtml",
+              "ViewState": "AQIAACsAAAAAAAAAAAAcwGkAAABUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-03-13T11:43:33.12Z",
               "EditorCaption": ""
@@ -63,8 +63,7 @@
               "RelativeToolTip": "Book App\\Models\\Rating.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T11:43:21.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-13T11:43:21.954Z"
             },
             {
               "$type": "Document",
@@ -76,8 +75,7 @@
               "RelativeToolTip": "Book App\\Data\\ApplicationDbContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T11:43:16.104Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-13T11:43:16.104Z"
             },
             {
               "$type": "Document",
@@ -89,8 +87,7 @@
               "RelativeToolTip": "Book App\\Controllers\\Books\\BooksController.cs",
               "ViewState": "AQIAAN8AAAAAAAAAAAAMwOEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-13T11:43:10.248Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-13T11:43:10.248Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "Book App\\Models\\Book.cs",
               "ViewState": "AQIAAAEAAAAAAAAAAAAuwCYAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T22:41:39.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T22:41:39.175Z"
             },
             {
               "$type": "Document",
@@ -115,8 +111,7 @@
               "RelativeToolTip": "Book App\\Services\\IBookService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T22:13:47.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T22:13:47.038Z"
             },
             {
               "$type": "Document",
@@ -128,8 +123,7 @@
               "RelativeToolTip": "Book App\\Services\\BookService.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAowBcAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-05T22:11:08.431Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-05T22:11:08.431Z"
             }
           ]
         }
