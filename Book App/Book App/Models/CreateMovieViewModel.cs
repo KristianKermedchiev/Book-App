@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Book_App.Models
 {
-    public class CreateMoviewViewModel
+    public class CreateMovieViewModel
     {
         public int Id { get; set; }
 
@@ -23,8 +23,8 @@ namespace Book_App.Models
         [Range(Constants.MediaConstants.YearPublishedMinValue, Constants.MediaConstants.YearPublishedMaxValue, ErrorMessage = "Year published must be between 1000 and the current year.")]
         public int YearPublished { get; set; }
 
-        [Range(Constants.MediaConstants.PagesMinLength, Constants.MediaConstants.PagesMaxLength, ErrorMessage = "Number of pages must be between 50 and 1999.")]
-        public int Pages { get; set; }
+        [Range(Constants.MediaConstants.DurationMinLength, Constants.MediaConstants.DurationMaxLength, ErrorMessage = "Duration must be between 20 and 600 minutes.")]
+        public int Duration { get; set; }
         public List<int> Genres { get; set; }
         public List<Genre> AllGenres { get; set; } = new List<Genre>();
     }

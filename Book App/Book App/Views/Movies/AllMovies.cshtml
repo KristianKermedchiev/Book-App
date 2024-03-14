@@ -1,67 +1,122 @@
-﻿@{
+﻿@model Book_App.Models.PaginatedMoviesViewModel
+
+@{
     ViewData["Title"] = "All Movies";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container mt-4">
-    <div class="row mb-3">
-        <div class="col-sm-12 col-md-4 mb-3">
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4 col-lg-4 col-sm-8 mb-3">
             <div class="input-group">
                 <label for="genreFilter" class="input-group-text">Filter by Genre</label>
-                <select class="form-select" id="genreFilter">
-                    <!-- Add your genre options here -->
-                    <option value="fantasy">Fantasy</option>
+                <select class="form-select" id="genreFilter" onchange="filterMovies()">
+                    <option value="all" selected>All Genres</option>
+                    <option value="classics">Classics</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="horror">Horror</option>
                     <option value="mystery">Mystery</option>
-                    <!-- Add more genres as needed -->
+                    <option value="romantic">Romantic</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                    <option value="thriller">Thriller</option>
                 </select>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 mb-3">
+
+        <div class="col-12 col-md-3 col-lg-3 col-sm-8 mb-3">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search by Title">
-                <button class="btn btn-outline-secondary" type="button">Search</button>
+                <input type="text" class="form-control" id="searchInput" placeholder="Search by Title">
+                <button class="btn btn-outline-secondary" type="button" onclick="searchMovies()">Search</button>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 text-center text-md-start">
-            <a href="#" class="btn btn-primary">Create a Movie</a>
+
+        <div class="col-12 col-md-2 col-lg-2 col-sm-7 text-center text-md-start">
+            <a asp-controller="Movies" asp-action="Create" class="btn btn-primary">Create a Movie</a>
         </div>
     </div>
 
     <h2 class="mb-4 mb-5 mt-3 d-flex justify-content-center">@ViewData["Title"]</h2>
 
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        @* For loop to display all movies *@
-        <div class="col">
-            <div class="card h-100">
-                <img src="book.ImageUrl" class="card-img-top" alt="book.Title">
-                <div class="card-body">
-                    <h5 class="card-title">book.Title</h5>
-                    <p class="card-text">book.Author</p>
-                    <p class="card-text"><small class="text-muted">Published: book.PublishDate.ToShortDateString()</small></p>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" style="margin-bottom:65px">
+        @foreach (var movie in Model.Movies.Where(m => m.IsApproved))
+        {
+            <div class="col" data-genres="@string.Join(",", movie.Genres.Select(genre => genre.Name.ToLower()))">
+                <div class="card h-100 border-0">
+                    <div class="d-flex justify-content-center">
+                        <img src="@movie.ImgUrl" class="card-img-top" alt="@movie.Title" style="width: 50%; height: 350px;">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">@movie.Title</h5>
+                        <p class="card-text">@movie.Director</p>
+                        <p class="card-text"><small class="text-muted">Published: @movie.YearPublished</small></p>
+                        @if (movie.Genres.Any())
+                        {
+                            var genreNames = movie.Genres.Select(genre => genre.Name);
+                            <p class="card-text"><small class="text-muted">Genres: @string.Join(", ", genreNames)</small></p>
+                        }
+                        <a asp-controller="Movies" asp-action="Details" asp-route-id="@movie.Id" class="btn btn-primary">View Details</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     </div>
 
-    <div class="mt-4 d-flex justify-content-center fixed-bottom" style="margin-bottom: 30px;">
+    <div class="mt-4 d-flex justify-content-center">
         <nav aria-label="Page navigation">
             <ul class="pagination">
-                <li class="page-item disabled">
-                    <span class="page-link">Previous</span>
-                </li>
-                <li class="page-item active" aria-current="page">
-                    <span class="page-link">1</span>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                        @if (i == Model.CurrentPage)
+                        {
+                            <span class="page-link">@i</span>
+                        }
+                        else
+                        {
+                            <a class="page-link" href="@Url.Action("AllMovies", new { page = i })">@i</a>
+                        }
+                    </li>
+                }
             </ul>
         </nav>
-        </>
     </div>
+</div>
+
+@section scripts {
+    <script>
+        function filterMovies() {
+            var selectedGenre = document.getElementById("genreFilter").value;
+
+            var movieCards = document.getElementsByClassName("col");
+
+            for (var i = 0; i < movieCards.length; i++) {
+                var movieCard = movieCards[i];
+                var genres = movieCard.getAttribute("data-genres");
+
+                if (selectedGenre === "all" || genres.includes(selectedGenre)) {
+                    movieCard.style.display = "block";
+                } else {
+                    movieCard.style.display = "none";
+                }
+            }
+        }
+
+        function searchMovies() {
+            var searchInput = document.getElementById("searchInput").value.toLowerCase();
+
+            var movieCards = document.getElementsByClassName("col");
+
+            for (var i = 0; i < movieCards.length; i++) {
+                var movieCard = movieCards[i];
+                var title = movieCard.querySelector(".card-title").innerText.toLowerCase();
+
+                if (title.includes(searchInput)) {
+                    movieCard.style.display = "block";
+                } else {
+                    movieCard.style.display = "none";
+                }
+            }
+        }
+    </script>
+}

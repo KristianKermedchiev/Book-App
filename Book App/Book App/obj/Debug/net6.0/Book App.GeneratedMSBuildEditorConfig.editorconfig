@@ -42,8 +42,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/GRIGS/Documents/GitHub/Book-App/Book App/Book App/Views/Admin/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGFzaGJvYXJkLmNzaHRtbA==
+[C:/Users/GRIGS/Documents/GitHub/Book-App/Book App/Book App/Views/BookAdmin/BookDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va0FkbWluXEJvb2tEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/GRIGS/Documents/GitHub/Book-App/Book App/Book App/Views/Books/AllBooks.cshtml]
@@ -70,8 +70,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/GRIGS/Documents/GitHub/Book-App/Book App/Book App/Views/MovieAdmin/MovieDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVBZG1pblxNb3ZpZURhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/GRIGS/Documents/GitHub/Book-App/Book App/Book App/Views/Movies/AllMovies.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEFsbE1vdmllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/GRIGS/Documents/GitHub/Book-App/Book App/Book App/Views/Movies/CreateMovie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXENyZWF0ZU1vdmllLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/GRIGS/Documents/GitHub/Book-App/Book App/Book App/Views/Shared/Error.cshtml]

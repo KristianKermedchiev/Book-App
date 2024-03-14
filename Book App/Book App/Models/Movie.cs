@@ -29,6 +29,7 @@ namespace Book_App.Models
 
         public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
 
+        [Range(Constants.MediaConstants.DurationMinLength, Constants.MediaConstants.DurationMaxLength, ErrorMessage = "Duration must be between 20 and 600 minutes.")]
         public int Duration { get; set; }
 
         public string OwnerId { get; set; } = null;

@@ -30,7 +30,8 @@
             public const int PagesMinLength = 50;
             public const int PagesMaxLength = 1999;
 
-            public const int MovieDuration = 0;
+            public const int DurationMinLength = 20;
+            public const int DurationMaxLength = 600;
         }
 
         public static class UserConstants

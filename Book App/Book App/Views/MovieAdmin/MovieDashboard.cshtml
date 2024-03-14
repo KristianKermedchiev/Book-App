@@ -1,0 +1,36 @@
+﻿@model List<Book_App.Models.Movie>
+
+<h2 class="text-center mt-3">Movie Admin Dashboard</h2>
+
+@foreach (var movie in Model)
+{
+<div class="card mb-3">
+    <div class="card-body">
+            <h3 class="card-title">@movie.Title</h3>
+            <p class="card-text">@movie.Description</p>
+            <p class="card-text"><strong>Director:</strong> @movie.Director</p>
+            <img src="@movie.ImgUrl" alt="@movie.Title" class="img-fluid mb-3" style="max-height: 200px" />
+
+            <p class="card-text"><strong>Description:</strong> @movie.Description</p>
+            <p class="card-text"><strong>Pages:</strong> @movie.Duration</p>
+            <p class="card-text"><strong>Year Published:</strong> @movie.YearPublished</p>
+            @if (movie.Genres.Any())
+        {
+                var genreNames = movie.Genres.Select(genre => genre.Name);
+            Console.WriteLine("Genre Names: " + string.Join(", ", genreNames));
+            <p class="card-text"><strong>Genres: @string.Join(", ", genreNames)</strong></p>
+        }
+
+        <div class="d-flex justify-content-end">
+            <form asp-controller="MovieAdmin" asp-action="Approve" method="post" class="me-2">
+                    <input type="hidden" name="id" value="@movie.Id" />
+                <button type="submit" class="btn btn-success">Approve</button>
+            </form>
+                <form asp-controller="MovieAdmin" asp-action="Reject" method="post">
+                    <input type="hidden" name="id" value="@movie.Id" />
+                <button type="submit" class="btn btn-danger">Reject</button>
+            </form>
+        </div>
+    </div>
+</div>
+}

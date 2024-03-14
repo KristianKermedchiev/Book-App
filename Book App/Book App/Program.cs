@@ -1,6 +1,7 @@
 using Book_App.Data;
 using Book_App.Models;
 using Book_App.Services.BookServices;
+using Book_App.Services.MovieServices;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +27,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<BookService>();
 builder.Services.AddScoped<IBookService, BookService>();
+
+builder.Services.AddScoped<MovieService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
 
 
 var app = builder.Build();
@@ -120,6 +124,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
 app.MapRazorPages();
 
 app.Run();

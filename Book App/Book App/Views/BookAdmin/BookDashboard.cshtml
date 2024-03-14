@@ -1,6 +1,6 @@
 ﻿@model List<Book_App.Models.Book>
 
-<h2 class="text-center mt-3">Admin Dashboard</h2>
+<h2 class="text-center mt-3">Book Admin Dashboard</h2>
 
 @foreach (var book in Model)
 {
@@ -22,12 +22,12 @@
             }
 
             <div class="d-flex justify-content-end">
-                <form asp-controller="Admin" asp-action="Approve" method="post" class="me-2">
+                <form asp-controller="BookAdmin" asp-action="Approve" method="post" class="me-2">
                     <input type="hidden" name="id" value="@book.Id" />
                     <button type="submit" class="btn btn-success">Approve</button>
                 </form>
 
-                <form asp-controller="Admin" asp-action="Reject" method="post">
+                <form asp-controller="BookAdmin" asp-action="Reject" method="post">
                     <input type="hidden" name="id" value="@book.Id" />
                     <button type="submit" class="btn btn-danger">Reject</button>
                 </form>

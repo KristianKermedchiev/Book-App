@@ -3,16 +3,16 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 [Authorize(Roles = "Administrator")]
-public class AdminController : Controller
+public class BookAdminController : Controller
 {
     private readonly IBookService _bookService;
 
-    public AdminController(IBookService bookService)
+    public BookAdminController(IBookService bookService)
     {
         _bookService = bookService;
     }
 
-    public IActionResult Dashboard()
+    public IActionResult BookDashboard()
     {
         var pendingSubmissions = _bookService.GetPendingSubmissions();
         foreach (var book in pendingSubmissions)
@@ -26,13 +26,13 @@ public class AdminController : Controller
     public IActionResult Approve(int id)
     {
         _bookService.ApproveBook(id);
-        return RedirectToAction("Dashboard");
+        return RedirectToAction("BookDashboard");
     }
 
     [HttpPost]
     public IActionResult Reject(int id)
     {
         _bookService.RejectBook(id);
-        return RedirectToAction("Dashboard");
+        return RedirectToAction("BookDashboard");
     }
 }

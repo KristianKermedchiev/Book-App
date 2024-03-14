@@ -1,0 +1,60 @@
+﻿@model Book_App.Models.CreateMovieViewModel
+
+@{
+    ViewData["Title"] = "Create Movie";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-3">
+    <h2 class="text-center">Create a New Movie</h2>
+
+    <form asp-controller="Movies" asp-action="Create" method="post">
+
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Director" class="form-label">Director</label>
+            <input asp-for="Director" class="form-control" />
+            <span asp-validation-for="Director" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="ImgUrl" class="form-label">Image Url</label>
+            <input asp-for="ImgUrl" class="form-control" />
+            <span asp-validation-for="ImgUrl" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="YearPublished" class="form-label">Year Published</label>
+            <input asp-for="YearPublished" class="form-control" />
+            <span asp-validation-for="YearPublished" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Duration" class="form-label">Duration</label>
+            <input asp-for="Duration" class="form-control" />
+            <span asp-validation-for="Duration" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Genres" class="form-label">Genres</label>
+            <select asp-for="Genres" asp-items="@(new SelectList(Model.AllGenres, "Id", "Name"))" class="form-control" multiple></select>
+            <span asp-validation-for="Genres" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+            <button type="submit" class="btn btn-primary me-2">Create Movie</button>
+            <a asp-controller="Movies" asp-action="AllMovies" class="btn btn-success">Back to All Movies</a>
+        </div>
+    </form>
+</div>
