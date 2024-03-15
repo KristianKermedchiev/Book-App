@@ -14,8 +14,11 @@ namespace Book_App.Data
         public DbSet<Book> Books { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<BookRating> Ratings { get; set; }
+        public DbSet<MovieRating> MovieRating { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<MovieCommentModel> MovieCommentModel { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,6 +38,12 @@ namespace Book_App.Data
                 .HasOne(r => r.Book)
                 .WithMany(b => b.Ratings)
                 .HasForeignKey(r => r.BookId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<MovieRating>()
+                .HasOne(r => r.Movie)
+                .WithMany(m => m.Ratings)
+                .HasForeignKey(r => r.MovieId)
                 .OnDelete(DeleteBehavior.Restrict);
 
         }

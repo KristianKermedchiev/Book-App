@@ -197,28 +197,6 @@ namespace Book_App.Controllers.Books
             return View(viewModel);
         }
 
-        [HttpPost]
-        public IActionResult AddComment(int id, string content)
-        {
-            var book = _context.Books.Include(b => b.Comments).FirstOrDefault(b => b.Id == id);
-
-            if (book == null)
-            {
-                return NotFound();
-            }
-
-            var comment = new Comment
-            {
-                Content = content,
-                UserId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value,
-                CreatedAt = DateTime.Now
-            };
-
-            book.Comments.Add(comment);
-            _context.SaveChanges();
-
-            return RedirectToAction("Details", new { id = id });
-        }
 
         [HttpPost]
         public async Task<IActionResult> Rate(int bookId, int ratingValue)
