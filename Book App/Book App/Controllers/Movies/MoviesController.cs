@@ -166,5 +166,75 @@ namespace Book_App.Controllers.Movies
 
             return Ok();
         }
+
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            var movie = _movieService.GetMovieById(id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new UpdateMovieViewModel
+            {
+                Id = movie.Id,
+                Title = movie.Title,
+                Description = movie.Description,
+                Director = movie.Director,
+                ImgUrl = movie.ImgUrl,
+                YearPublished = movie.YearPublished,
+                Duration = movie.Duration,
+                Genres = movie.Genres.Select(g => g.Id).ToList(),
+                AllGenres = _context.Genres.ToList()
+            };
+
+            return View("UpdateMovie", viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(UpdateMovieViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var existingMovie = _context.Movies
+                    .Include(m => m.Genres)
+                    .SingleOrDefault(m => m.Id == model.Id);
+
+                if (existingMovie == null)
+                {
+                    return NotFound();
+                }
+
+                existingMovie.Title = model.Title;
+                existingMovie.Description = model.Description;
+                existingMovie.Director = model.Director;
+                existingMovie.ImgUrl = model.ImgUrl;
+                existingMovie.YearPublished = model.YearPublished;
+                existingMovie.Duration = model.Duration;
+
+                existingMovie.Genres.Clear();
+
+                foreach (var genreId in model.Genres)
+                {
+                    var genre = _context.Genres.Find(genreId);
+                    if (genre != null)
+                    {
+                        existingMovie.Genres.Add(genre);
+                    }
+                }
+
+                _context.Update(existingMovie);
+                _context.SaveChanges();
+
+                return RedirectToAction("AllMovies");
+            }
+
+            model.AllGenres = _context.Genres.ToList();
+
+            return View("UpdateMovies", model);
+        }
     }
 }
