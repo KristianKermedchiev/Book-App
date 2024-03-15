@@ -30,7 +30,7 @@ namespace Book_App.Models
 
         public ICollection<Genre> Genres { get; set; } = new List<Genre>();
 
-        public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+        public ICollection<BookRating> Ratings { get; set; } = new List<BookRating>();
 
         public double AverageRating { get; set; }
 

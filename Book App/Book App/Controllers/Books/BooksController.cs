@@ -245,7 +245,7 @@ namespace Book_App.Controllers.Books
             }
             else
             {
-                var newRating = new Rating
+                var newRating = new BookRating
                 {
                     UserId = userId,
                     BookId = bookId,

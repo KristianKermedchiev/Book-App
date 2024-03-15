@@ -13,7 +13,7 @@ namespace Book_App.Data
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Movie> Movies { get; set; }
-        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<BookRating> Ratings { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Comment> Comments { get; set; }
 
@@ -31,7 +31,7 @@ namespace Book_App.Data
                 .WithMany(g => g.Books)
                 .UsingEntity(j => j.ToTable("BookGenres"));
 
-            modelBuilder.Entity<Rating>()
+            modelBuilder.Entity<BookRating>()
                 .HasOne(r => r.Book)
                 .WithMany(b => b.Ratings)
                 .HasForeignKey(r => r.BookId)

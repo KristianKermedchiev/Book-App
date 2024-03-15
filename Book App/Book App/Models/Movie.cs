@@ -27,7 +27,7 @@ namespace Book_App.Models
 
         public ICollection<Genre> Genres { get; set; } = new List<Genre>();
 
-        public ICollection<Rating> Ratings { get; set; } = new List<Rating>();
+        public ICollection<MovieRating> Ratings { get; set; } = new List<MovieRating>();
 
         [Range(Constants.MediaConstants.DurationMinLength, Constants.MediaConstants.DurationMaxLength, ErrorMessage = "Duration must be between 20 and 600 minutes.")]
         public int Duration { get; set; }
