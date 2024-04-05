@@ -3,11 +3,11 @@
 
 3. Modify the Profile page.
 
-4.Add Password reset function.
+4. Add Password reset function.
 
 5. Add Unit Tests.
 
 6. 404 and 500 error pages.
 
-
+7. Movie page accessed without log in - needs fix.
 
