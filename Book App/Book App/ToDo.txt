@@ -9,5 +9,4 @@
 
 6. 404 and 500 error pages.
 
-7. Movie page accessed without log in - needs fix.
 

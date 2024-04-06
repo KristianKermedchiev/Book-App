@@ -1,12 +1,14 @@
 ﻿using Book_App.Data;
 using Book_App.Models;
 using Book_App.Services.MovieServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Book_App.Controllers.Movies
 {
+    [Authorize]
     public class MoviesController : Controller
     {
         private readonly IMovieService _movieService;
