@@ -1,9 +1,7 @@
 
-2.Validation on DB, Client and Server.
+1. Validation on DB, Client and Server.
 
-3. Modify the Profile page.
-
-4. Add Password reset function.
+3. Modify the Profile page and Add Password reset function.
 
 5. Add Unit Tests.
 
